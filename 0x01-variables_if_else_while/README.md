@@ -41,3 +41,14 @@
 
 
 9.    Patience, persistence and perspiration make an unbeatable combination for success(9-print_comb.c): Write a program that prints all possible combinations of single-digit numbers.
+
+
+10.   Inventing is a combination of brains and materials. The more brains you use, the less material you need(100-print_comb3.c): Write a program that prints all possible different combinations of two digits.
+
+
+
+11.   The success combination in business is: Do what you do better... and: do more of what you do...( 101-print_comb4.c): Write a program that prints all possible different combinations of three digits.
+
+
+
+12.   Software is eating the World(102-print_comb5.c): Write a program that prints all possible combinations of two two-digit numbers.
