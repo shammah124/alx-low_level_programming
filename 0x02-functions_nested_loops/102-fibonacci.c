@@ -1,25 +1,25 @@
 #include <stdio.h>
 /**
-* main - Prints the sum of even-valued Fibonacci sequence
-* terms not exceeding 4000000.
+* main - Entry point
 *
-* Return: Always 0.
+* Return: Always 0 (Success)
 */
 int main(void)
 {
-	unsigned long fibo1 = 0, fibo2 = 1, fiboSum;
-	float totalSum;
+	int i;
 
-	while (1)
+	long int fibonacci[50];
+
+	fibonacci[0] = 1;
+	fibonacci[1] = 2;
+	printf("%ld, %ld, ", fibonacci[0], fibonacci[1]);
+	for (i = 2; i < 50; i++)
 	{
-		fiboSum = fibo1 + fibo2;
-		if (fiboSum > 4000000)
-			break;
-		if ((fiboSum % 2) == 0)
-			totalSum += fiboSum;
-		fibo1 = fibo2;
-		fibo2 = fiboSum;
+		fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+		if (i == 49)
+			printf("%ld\n", fibonacci[i]);
+		else
+			printf("%ld, ", fibonacci[i]);
 	}
-	printf("%.0f\n", totalSum);
 	return (0);
 }
