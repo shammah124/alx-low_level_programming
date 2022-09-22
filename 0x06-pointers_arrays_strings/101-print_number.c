@@ -1,36 +1,23 @@
-#include <stdio.h>
+/*
+* File: 101-print_number.c
+* Auth: Brennan D Baraban
+*/
 #include "main.h"
 /**
-* print_number - prints a number
-* @n: Input number
+* print_number - Prints an integer.
+* @n: The integer to be printed.
 */
 void print_number(int n)
 {
-	int res, temp, expo;
-	expo = 1;
-/*Check negatives*/
-	if (n >= 0)
-		res = n * -1;
+	unsigned int num = n;
 
-	else
+	if (n < 0)
 	{
-		res = n;
-
 		_putchar('-');
-	}
-/*Initialize exponent variable*/
-	temp = res;
+		num = -num;
 
-	while (temp <= -10)
-	{
-		expo *= 10;
-
-		temp /= 10;
 	}
-/*Main */
-	while (expo >= 1)
-	{
-		_putchar(((res / expo) % 10) * -1 + '0');
-		expo /= 10;
-	}
+	if ((num / 10) > 0)
+		print_number(num / 10);
+	_putchar((num % 10) + '0');
 }
