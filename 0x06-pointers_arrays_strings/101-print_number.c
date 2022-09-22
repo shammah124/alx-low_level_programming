@@ -1,53 +1,36 @@
+#include <stdio.h>
 #include "main.h"
 /**
-* base10 - power in 10 base
-* @n: an exponent
-* Return: returns 10 to power exponent
-*/
-int base10(int n)
-{
-	int base = 10;
-
-	while (n > 0)
-	{
-		base *= 10;
-
-		n--;
-	}
-	return (base);
-}
-/**
-* print_number - prints integers enters as parameters using putchar
-* @n: integer to print
-* Return: void
+* print_number - prints a number
+* @n: Input number
 */
 void print_number(int n)
 {
-	int power;
+	int res, temp, expo;
+	expo = 1;
+/*Check negatives*/
+	if (n >= 0)
+		res = n * -1;
 
-	power = base10(8);
-
-	if (n < 0)
-	{
-		_putchar('-');
-
-		n *= -1;
-	}
-	if (n == 0)
-		_putchar('0');
 	else
 	{
-		while (n / power == 0)
+		res = n;
 
-			power /= 10;
+		_putchar('-');
+	}
+/*Initialize exponent variable*/
+	temp = res;
 
-		while (power >= 1)
-		{
-			_putchar((n / power) + '0');
+	while (temp <= -10)
+	{
+		expo *= 10;
 
-			n %= power;
-
-			power /= 10;
-		}
+		temp /= 10;
+	}
+/*Main */
+	while (expo >= 1)
+	{
+		_putchar(((res / expo) % 10) * -1 + '0');
+		expo /= 10;
 	}
 }
